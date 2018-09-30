@@ -8,7 +8,7 @@ Socimood gives you insight into trends in your mood, tone, and sentiment of your
 ## Team Members and Roles
 - Alex Sanchez
 - Thomas Cani
-- Albert Gonzales
+- Albert Gonzalez
 - James Cherven
 
 Each member will be choosing tasks from a Github issues list as they are added.
