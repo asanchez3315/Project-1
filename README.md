@@ -8,7 +8,7 @@ Socimood gives you insight into trends in your mood, tone, and sentiment of your
 ![Initial visual look](assets/images/socimood-visual-mockup.png "Initial visual concept")
 
 ## Team Members and Roles
-- Alex Sanchez
+- Alexander Sanchez
 - Thomas Cani
 - Albert Gonzalez
 - James Cherven
