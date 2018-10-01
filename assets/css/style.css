@@ -16,7 +16,12 @@ body{
 }
 
 .fa{
-      color:#444aaa
+      color:#444aaa;
+      padding: 1rem;
+}
+
+.lead {
+      padding: 1rem;
 }
 
 
