@@ -1,0 +1,50 @@
+body{
+      margin:0px;
+      background-image:url("https://sp.yimg.com/ib/th?id=OIP.G78bRsUIm320kakbAUqDwwHaHa&pid=15.1&rs=1&c=1&qlt=95&w=121&h=121")
+}
+
+
+.jumbotron{
+      background:#444aaa;
+      padding-top:32px;
+      padding-bottom:32px;
+      font-size: 4em;
+      color:white
+
+    
+     
+}
+
+.fa{
+      color:#444aaa
+}
+
+
+
+
+
+
+.card-header{
+background:#444aaa;
+color:white
+}
+
+.form-control{
+      margin-top:20px;
+      width: 31%
+}
+
+
+.card-body{
+      margin-bottom:1px;
+}
+
+button{
+      margin-bottom: 20px;
+      background:#444aaa;
+      color:white
+}
+
+
+
+
