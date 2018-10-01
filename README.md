@@ -20,7 +20,7 @@ Each member will be choosing tasks from a Github issues list as they are added.
 ### Unique technologies to satisfy project rubric
 - Twitter API for getting chunks of text containing Tweets
 - text-processing.com API for analyzing tone and sentiment of Twitter content
-- D3.js or P5.js (Processing) libraries for data visualization of 
+- D3.js or P5.js (Processing) libraries for data visualization of user results
 
 ## Breakdown of tasks/schedule
 1. ...
