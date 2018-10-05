@@ -7,7 +7,7 @@ var moment = require('moment');
 // The key contained there is formatted to only authenticate for the app, not the user account it belongs to.
 var config = require('./config');
 
-// Sets T as the Twitter API client with out API keys
+// Sets T as the Twitter API client with our API keys
 var Twitter = new Twit(config);
 
 // Username textbox value should be pulled into the variable `twitterUser`
@@ -26,7 +26,7 @@ var searchQuery = {
     q: 'from:' + twitterUser + ' ' + 'since:' + startDate + ' ' + 'until:' + endDate
 };
 
-// This is the Twitter client's API call. We're storing it in a variable 
+// This is the Twitter client's API call. 
 Twitter.get('search/tweets', searchQuery, tweetContent);
 
 // This formats the response so we only get the text of the Tweet object
