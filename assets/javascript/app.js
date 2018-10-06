@@ -1,23 +1,36 @@
+var Twit = require('twit');
+var moment = require('moment');
 
+var config = require('./config');
 
-var text = $("#text").val().trim();
-var apiKey= "d0c8e8c7a8e01ae93832dcadeab63133"
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://api.meaningcloud.com/sentiment-2.1",
-  "method": "POST",
-  "headers": {
-    "content-type": "application/x-www-form-urlencoded"
-  },
-  "data": {
-    "key": "d0c8e8c7a8e01ae93832dcadeab63133",
-    "lang": "en",
-    "txt": text,
-    "txtf": "plain",
-  }
-}
+var Twitter = new Twit(config);
 
-$.ajax(settings).done(function (response) {
-  console.log(response);
+$(document).ready(function() {
+  $("#submit-button").click(function() {
+    // Capture value of input and send to twitter api
+    var twitterUser = $('#input').val;
+    console.log(twitterUser);
+
+    var startDaysAgo = 7;
+    var endDaysAgo = 0;
+    var startDate = moment().subtract(startDaysAgo, 'd').format('YYYY-MM-DD');
+    var endDate = moment().subtract(endDaysAgo, 'd').format('YYYY-MM-DD');
+
+    var searchQuery = {
+      tweet_mode: 'extended',
+      q: 'from:' + twitterUser + ' ' + 'since:' + startDate + ' ' + 'until:' + endDate
+    };
+    // Twitter api call
+    Twitter.get('search/tweets', searchQuery, tweetContent);
+  });
+
+  $("#input").val("");
 });
+
+function tweetContent(err, data, response) {
+  var tweets = data.statuses;
+  var userTweetChunk = '';
+  for (var i = 0; i < tweets.length; i++)
+    userTweetChunk += (tweets[i].full_text + '\n' + '\n');
+  console.log(userTweetChunk.trim());
+};
