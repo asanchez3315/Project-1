@@ -7,7 +7,7 @@ var moment = require('moment');
 // The key contained there is formatted to only authenticate for the app, not the user account it belongs to.
 var config = require('./config');
 
-// Sets T as the Twitter API client with our API keys
+// Sets Twitter as the Twitter API client with our API keys
 var Twitter = new Twit(config);
 
 // Username textbox value should be pulled into the variable `twitterUser`
@@ -33,9 +33,8 @@ Twitter.get('search/tweets', searchQuery, tweetContent);
 function tweetContent(err, data, response) {
     var tweets = data.statuses;
     var userTweetChunk = '';
-    for (var i = 0; i < tweets.length; i++) {
-        // The actual data that Socimood will consume for sentiment analysis is a concatenated chunk of all retrieved tweet text
+    // The actual data that Socimood will consume for sentiment analysis is a concatenated chunk of the retrieved text
+    for (var i = 0; i < tweets.length; i++) 
         userTweetChunk += (tweets[i].full_text + '\n' + '\n');
-    }
     console.log(userTweetChunk.trim());
 };

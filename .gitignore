@@ -3,6 +3,7 @@
 *.ai
 
 # Exclude my node garbage
+node_modules
 # Logs
 logs
 *.log
