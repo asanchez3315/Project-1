@@ -1,8 +1,8 @@
 {
   "name": "Project-1",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "## Description Socimood gives you insight into trends in your mood, tone, and sentiment of your social media posts over a period of time. A user will submit their twitter handle and a period of time to observe. Socimood will analyze the Tweets posted over that period of time and display an analysis of the content, informing them of positivity, negativity and intensity. Users will be able to see snapshots of the mood of their Twitter persona.",
+  "main": "config.js",
   "scripts": {
     "start": "lite-server"
   },
@@ -19,9 +19,5 @@
   "homepage": "https://github.com/asanchez3315/Project-1#readme",
   "devDependencies": {
     "lite-server": "^2.4.0"
-  },
-  "dependencies": {
-    "moment": "^2.22.2",
-    "twit": "^2.2.11"
   }
 }
