@@ -1,3 +1,13 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDjhGK7EXHr7GOMwBWy7wfLA-Qa4nR46Lo",
+  authDomain: "socimood-project.firebaseapp.com",
+  databaseURL: "https://socimood-project.firebaseio.com",
+  projectId: "socimood-project",
+  storageBucket: "socimood-project.appspot.com",
+  messagingSenderId: "1064796173790"
+};
+firebase.initializeApp(config);
 
 $(document).ready(function() {
   console.log('Document is ready');
