@@ -1,0 +1,8 @@
+# PSD file for wireframe
+*.psd
+
+# NPM garbage that James uses in their dev environment
+node_modules
+package.json
+package*.json
+
