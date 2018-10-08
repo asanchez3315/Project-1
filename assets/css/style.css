@@ -1,6 +1,6 @@
 body{
       margin:0px;
-      background-image:url("https://sp.yimg.com/ib/th?id=OIP.G78bRsUIm320kakbAUqDwwHaHa&pid=15.1&rs=1&c=1&qlt=95&w=121&h=121")
+      background-image:url("")
 }
 
 
@@ -9,18 +9,22 @@ body{
       padding-top:32px;
       padding-bottom:32px;
       font-size: 4em;
-      color:white
-
-    
-     
+      color:white;    
 }
 
-.fa{
-      color:#444aaa;
+h2{
+      font-size:28px;
       padding: 1rem;
 }
 
-.lead {
+input{
+      margin-left:2rem
+}
+
+
+
+
+p {
       padding: 1rem;
 }
 
@@ -45,9 +49,12 @@ color:white
 }
 
 button{
-      margin-bottom: 20px;
+      
       background:#444aaa;
-      color:white
+      color:white;
+      position: relative;
+    top: -54px;
+    left: 15rem;
 }
 
 
