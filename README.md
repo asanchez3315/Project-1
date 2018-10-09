@@ -5,6 +5,7 @@ Socimood is a quick way to search movie plots and analyze them for the tone and 
 
 Socimood is useful for parents or teachers who wish to get a quick look at whether the movie is suitable for children or other special audiences.
 
+See the deployed application at [socimood.me](http://socimood.me).
 ## Initial Designs
 
 ![Initial visual look](assets/images/socimood-visual-mockup.png "Initial visual concept")
