@@ -1,3 +1,4 @@
+/* Universal Stylings */
 html {
       line-height: 1.4;
 }
@@ -6,8 +7,22 @@ html {
       margin-top: 2rem;
 }
 
-h4 {
+/* Jumbotron */
+.jumbotron {
+      color: blue;
+}
+
+/* Card */
+.card-header {
+      color: blue;
+      font-weight: bold;
+}
+
+/* About Us */
+.container-fluid h4 {
       text-decoration: underline;
+      color: blue;
+      font-weight: bold;
 }
 
 
