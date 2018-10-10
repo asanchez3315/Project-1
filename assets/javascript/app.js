@@ -73,13 +73,14 @@ $(document).ready(function() {
     // Reset the input field after entry
     $('#input').val('');
     database.ref().remove()
+    $('movie-title').text('')
     database.ref().on("child_added", function(childSnapshot) {
       movieName = childSnapshot.val().movie
       pos = Math.floor(childSnapshot.val().pos.replace('%', ''))
       neg = Math.floor(childSnapshot.val().neg.replace('%', ''))
       mid = Math.floor(childSnapshot.val().mid.replace('%', ''))
       total = childSnapshot.val().total
-      $('#movie-title').append('<h4>' + movieName + '</h4>')
+      $('#movie-title').text(movieName)
       drawCircle('circles-pos', pos, '#89d179')
       drawCircle('circles-mid', mid, '#ccca7c')
       drawCircle('circles-neg', neg, '#ce6d6d')
