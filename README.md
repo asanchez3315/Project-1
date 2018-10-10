@@ -26,7 +26,7 @@ James engineers the results display of the UI and provides work on the applicati
 ### Unique technologies to satisfy project rubric
 - [OMDB API](http://www.omdbapi.com) for fetching film plot and posters data
 - [Text Sentiment Analysis API](https://market.mashape.com/fyhao/text-sentiment-analysis-method) by fyaho for analyzing movie plot content
-- [D3.js](https://d3js.org) for data visualization of user results
+- [Circles.js](https://www.lugolabs.com/circles) for data visualization of user results
 
 ## Breakdown of tasks/schedule
 1. Find APIs for the project that meet the following criteria:
