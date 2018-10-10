@@ -33,6 +33,8 @@ $(document).ready(function() {
   $('#submit-button').on('click', function() {
     var $capturedInput = $('#input').val(); 
 
+    // Going from OMDB to Firebase takes a few seconds so display a loading message
+    $('movie-title').html('Fetching movie information...')
     $.ajax({
       url: "https://www.omdbapi.com/?t=" + $capturedInput + "&plot=full&apikey=trilogy",
       method: "GET"
