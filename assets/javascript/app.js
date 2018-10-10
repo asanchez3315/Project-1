@@ -33,8 +33,6 @@ $(document).ready(function() {
   $('#submit-button').on('click', function() {
     var $capturedInput = $('#input').val(); 
 
-    // Going from OMDB to Firebase takes a few seconds so display a loading message
-    $('movie-title').html('Fetching movie information...')
     $.ajax({
       url: "https://www.omdbapi.com/?t=" + $capturedInput + "&plot=full&apikey=trilogy",
       method: "GET"
@@ -42,6 +40,8 @@ $(document).ready(function() {
       // After the data comes back from the API
       .then(function (response) {
         moviePlot = response.Plot
+        movieTitle = response.Title
+
         $.ajax({
           url: 'https://text-sentiment.p.mashape.com/analyze',
           headers: { "X-Mashape-Key": "U9WXEPF7GdmshYXO54mcDYqDyKCCp1mzq6sjsn4qrr6eZV6WZr", "content-Type": "application/x-www-form-urlencoded", "Accept": "application/json" },
@@ -51,13 +51,12 @@ $(document).ready(function() {
             var rating = JSON.parse(data)
     
             var movieInfo = {
-              movie: $capturedInput,
+              movie: movieTitle,
               pos: rating['pos_percent'],
               neg: rating['neg_percent'],
               mid: rating['mid_percent'],
-              total: rating['totalLines']
+              plot: moviePlot
             }
-          
     
             database.ref().push(movieInfo);
     
@@ -68,21 +67,22 @@ $(document).ready(function() {
         })
       })
     
-
-    // Example output to the console
-    console.log( $capturedInput );
-
     // Reset the input field after entry
     $('#input').val('');
     database.ref().remove()
-    $('movie-title').text('')
+    $('#movie-title').text('')
+    $('#omdb-plot-display').text('')
+
+    // Display info from Firebase
     database.ref().on("child_added", function(childSnapshot) {
       movieName = childSnapshot.val().movie
+      plotText = childSnapshot.val().plot
       pos = Math.floor(childSnapshot.val().pos.replace('%', ''))
       neg = Math.floor(childSnapshot.val().neg.replace('%', ''))
       mid = Math.floor(childSnapshot.val().mid.replace('%', ''))
       total = childSnapshot.val().total
       $('#movie-title').text(movieName)
+      $('#omdb-plot-display').text(plotText)
       drawCircle('circles-pos', pos, '#89d179')
       drawCircle('circles-mid', mid, '#ccca7c')
       drawCircle('circles-neg', neg, '#ce6d6d')
