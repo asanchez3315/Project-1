@@ -32,7 +32,6 @@ $(document).ready(function() {
   // When input is submitted, call the handler
   $('#submit-button').on('click', function() {
     var $capturedInput = $('#input').val(); 
-alert('hello')
 
     $.ajax({
       url: "https://www.omdbapi.com/?t=" + $capturedInput + "&plot=full&apikey=trilogy",
@@ -74,25 +73,39 @@ alert('hello')
     // Reset the input field after entry
     $('#input').val('');
     database.ref().remove()
+    $('movie-title').text('')
     database.ref().on("child_added", function(childSnapshot) {
       movieName = childSnapshot.val().movie
-      pos = childSnapshot.val().pos
-      neg = childSnapshot.val().neg
-      mid = childSnapshot.val().mid
+      pos = Math.floor(childSnapshot.val().pos.replace('%', ''))
+      neg = Math.floor(childSnapshot.val().neg.replace('%', ''))
+      mid = Math.floor(childSnapshot.val().mid.replace('%', ''))
       total = childSnapshot.val().total
-      content.html(`
-              <div>
-              <h3>movie:${movieName}</h3>
-              <h3>pos:${pos}</h3>
-              <h3>neg:${neg}</h3>
-              <h3>mid:${mid}</h3>
-              <h3>total:${total}</h3>  
-              </div>
-            `)
-      
+      $('#movie-title').text(movieName)
+      drawCircle('circles-pos', pos, '#89d179')
+      drawCircle('circles-mid', mid, '#ccca7c')
+      drawCircle('circles-neg', neg, '#ce6d6d')
+            
       });
   });
   
   
 }); // End $(document).ready()
+
+function drawCircle(divId, value, hexColor) {
+  Circles.create({
+    id:           divId,
+    radius:       20,
+    value:        value,
+    maxValue:     100,
+    width:        10,
+    text:         function(value){return value + '%';},
+    colors:       ['#dbdbdb', hexColor],
+    duration:     400,
+    wrpClass:     'circles-wrp',
+    textClass:    'circles-text',
+    styleWrapper: true,
+    styleText:    true
+  })
+  
+}
 
