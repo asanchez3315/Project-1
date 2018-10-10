@@ -9,13 +9,16 @@ html {
 
 /* Jumbotron */
 .jumbotron {
-      color: blue;
+      color: darkslateblue;
+      background-image: url(../images/linear-gradient-yellow-blue-2560x1440-c2-ffdab9-4169e1-a-30-f-14.png)
 }
 
 /* Card */
 .card-header {
-      color: blue;
+      color: darkslateblue;
       font-weight: bold;
+      background-image: url(../images/linear-gradient-yellow-blue-2560x1440-c2-ffdab9-4169e1-a-30-f-14.png)
+
 }
 
 /* About Us */
